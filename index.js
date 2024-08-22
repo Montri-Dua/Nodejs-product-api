@@ -3,10 +3,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const productRoutes = require('./routes/productRoutes'); // Import product routes
 const authRoutes = require('./routes/authRoutes');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
-
+// Use CORS middleware
+app.use(cors());
 // Middleware to parse JSON
 app.use(bodyParser.json());
 

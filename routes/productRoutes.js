@@ -19,6 +19,16 @@ router.post('/products', protect, async (req, res) => {
 });
 
 // Get all products
+router.get('/Health', async (req, res) => {
+  try {
+    console.log("---------Health");
+    res.status(200).send("OK");
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+// Get all products
 router.get('/products', protect, async (req, res) => {
   try {
     const products = await Product.find();

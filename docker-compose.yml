@@ -1,12 +1,19 @@
 version: '3.4'
 
 services:
-  nodejsproductapi:
-    image: nodejsproductapi
+  nodejs-product-api:
+    image: nodejs-product-api
     build:
       context: .
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
+      MONGO_URI: mongodb+srv://montriduangkrut:mJl7MuRR8qxmdFHr@cluster0.rth7atc.mongodb.net/
     ports:
       - 3000:3000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

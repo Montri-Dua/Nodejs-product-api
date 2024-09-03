@@ -20,3 +20,7 @@ docker rmi nodejs-product-api
 
 ## Docker Run
 docker run nodejs-product-api
+
+
+## use docker compose
+docker compose up --build
